@@ -1,2 +1,4 @@
 # Robo-1
-Firts project within Vertex
+First project within Vertex
+
+Motor movement.
