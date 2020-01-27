@@ -1,2 +1,2 @@
 # Robo-1
-Firts proyect within Vertex
+Firts project within Vertex
