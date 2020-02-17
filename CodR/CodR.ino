@@ -35,7 +35,6 @@ void loop() {
     if(c == 'A'){
     
       digitalWrite(dirm, HIGH);
-      delayMicroseconds(10);
        
       for(int j=0; j<35; j++){
       digitalWrite(pulm, HIGH);
@@ -48,7 +47,7 @@ void loop() {
       else if( c== 'B' ){
 
       digitalWrite(dirm, LOW);
-      delayMicroseconds(10);
+
       
       for(int i=0; i<35; i++){
         digitalWrite(pulm, HIGH);
@@ -62,7 +61,6 @@ void loop() {
       else if(c=='C'){
  
       digitalWrite(dirmd, LOW);
-      delayMicroseconds(10);
     
       for(int j=0; j<35; j++){
         digitalWrite(pulmd, HIGH);
@@ -75,7 +73,6 @@ void loop() {
     else if(c=='D'){
       
         digitalWrite(dirmd, HIGH);
-        delayMicroseconds(10);
       
         for(int i=0; i<35; i++){
           digitalWrite(pulmd, HIGH);
