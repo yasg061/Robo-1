@@ -28,48 +28,40 @@ void loop() {
   
   
     
-  while(Serial.available()>0){
+  if(Serial.available()>0){
+    digitalWrite(PIN_RELAY, HIGH);
+    digitalWrite(PIN_RELAY2, HIGH);
+    
     value = Serial.read();
     
     if(value == 'A'){
-      digitalWrite(PIN_RELAY, HIGH);
-      digitalWrite(PIN_RELAY2, HIGH);
-      delayMicroseconds(9500);
       
       digitalWrite(PIN_DIR, HIGH);
       digitalWrite(PIN_PUL, HIGH);
-      delayMicroseconds(9500);
+      delayMicroseconds(6500);
       digitalWrite(PIN_PUL, LOW);
       
     } else if(value == 'B'){
-      digitalWrite(PIN_RELAY, HIGH);
-      digitalWrite(PIN_RELAY2, HIGH);
-      delayMicroseconds(9500);
       
       digitalWrite(PIN_DIR, LOW);
       digitalWrite(PIN_PUL, HIGH);
-      delayMicroseconds(9500);
+      delayMicroseconds(6500);
       digitalWrite(PIN_PUL, LOW);
       
     } else if(value == 'C'){
-      digitalWrite(PIN_RELAY, HIGH);
-      digitalWrite(PIN_RELAY2, HIGH);
-      delayMicroseconds(9500);
       
       digitalWrite(PIN_DIR2, HIGH);
       digitalWrite(PIN_PUL2, HIGH);
-      delayMicroseconds(9500);
+      delayMicroseconds(6500);
       digitalWrite(PIN_PUL2, LOW);
       
     } else if(value == 'D'){
-      digitalWrite(PIN_RELAY, HIGH);
-      digitalWrite(PIN_RELAY2, HIGH);
-      delayMicroseconds(6500);
       
       digitalWrite(PIN_DIR2, LOW);
       digitalWrite(PIN_PUL2, HIGH);
       delayMicroseconds(6500);
       digitalWrite(PIN_PUL2, LOW);
+      
     } else{
       
     }
