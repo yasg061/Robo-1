@@ -16,24 +16,18 @@ void setup() {
   pinMode(PIN_RELAY, OUTPUT);
   pinMode(PIN_RELAY2, OUTPUT);
   pinMode(PIN_5V, OUTPUT);
-  
   Serial.begin(9600);
 }
 
 void loop() {
   digitalWrite(PIN_5V, HIGH);
-  digitalWrite(PIN_RELAY, LOW);
-  digitalWrite(PIN_RELAY2, LOW); 
 
-  
-  
-    
-  if(Serial.available()>0){
-    digitalWrite(PIN_RELAY, HIGH);
-    digitalWrite(PIN_RELAY2, HIGH);
-    
+  if(Serial.available()){
     value = Serial.read();
     
+    digitalWrite(PIN_RELAY, HIGH);
+    digitalWrite(PIN_RELAY2, HIGH);
+       
     if(value == 'A'){
       
       digitalWrite(PIN_DIR, HIGH);
@@ -62,11 +56,20 @@ void loop() {
       delayMicroseconds(6500);
       digitalWrite(PIN_PUL2, LOW);
       
-    } else{
+    } else if(value == 'E'){
+      
+      digitalWrite(PIN_RELAY, HIGH);
+      digitalWrite(PIN_RELAY2, HIGH);
+      
+    } else if(value == 'F'){
+      digitalWrite(PIN_RELAY, LOW);
+      digitalWrite(PIN_RELAY2, LOW);
+    } else {
       
     }
+  } else{
+    digitalWrite(PIN_RELAY, LOW);
+    digitalWrite(PIN_RELAY2, LOW);
   }
-     digitalWrite(PIN_RELAY, LOW);
-     digitalWrite(PIN_RELAY2, LOW); 
-  
+
 }
