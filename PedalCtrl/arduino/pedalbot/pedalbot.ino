@@ -54,6 +54,7 @@ void loop() {
       delayMicroseconds(1000);
       digitalWrite(PIN_PUL2, LOW);
       
+
     }else{
      
     }
